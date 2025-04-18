@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Review Redirect</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BW32SLZEW0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BW32SLZEW0');
+</script>
+
+    /* クリックイベント送信 */
+    gtag('event', 'review_click', {
+      event_category: 'Review'
+    });
+
+    /* 1秒後に Googleレビュー画面へ */
+    setTimeout(function(){
+      location.href =
+        'https://search.google.com/local/writereview?placeid=ChIJa_vd30WJGGARa0zHaj3dl8Y' + location.search;
+    }, 1000);
+  </script>
+</head>
+<body>
+  <p style="font-size:18px;text-align:center;margin-top:40px;">
+    レビュー画面を開いています…
+  </p>
+</body>
+</html>
