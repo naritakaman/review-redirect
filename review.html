@@ -4,22 +4,19 @@
   <meta charset="utf-8">
   <title>Review Redirect</title>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BW32SLZEW0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- GA4 計測タグ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BW32SLZEW0"></script>
+  <script>
+    /* ---- GA 初期化 ---- */
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BW32SLZEW0');
 
-  gtag('config', 'G-BW32SLZEW0');
-</script>
+    /* ---- クリックイベント送信 ---- */
+    gtag('event', 'review_click', {event_category: 'Review'});
 
-    /* クリックイベント送信 */
-    gtag('event', 'review_click', {
-      event_category: 'Review'
-    });
-
-    /* 1秒後に Googleレビュー画面へ */
+    /* ---- 1秒後に Googleレビュー画面へ転送 ---- */
     setTimeout(function(){
       location.href =
         'https://search.google.com/local/writereview?placeid=ChIJa_vd30WJGGARa0zHaj3dl8Y' + location.search;
@@ -32,3 +29,4 @@
   </p>
 </body>
 </html>
+
